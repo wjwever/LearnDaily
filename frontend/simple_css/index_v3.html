@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+
+<head>
+    <meta charset="UTF-8">
+    <title>酷炫导航栏（Sticky版）</title>
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        .navbar {
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            background: rgba(51, 51, 51, 0.95);
+            /* 半透明背景 */
+            padding: 10px 30px;
+            transition: background-color 0.5s;
+        }
+
+        .navbar .logo {
+            color: #fff;
+            font-size: 24px;
+            text-decoration: none;
+            font-weight: bold;
+        }
+
+        .navbar .nav-links a {
+            color: #f2f2f2;
+            text-decoration: none;
+            margin-left: 30px;
+            padding: 10px 15px;
+            border-radius: 5px;
+            transition: background-color 0.3s, color 0.3s;
+        }
+
+        .navbar .nav-links a:hover {
+            background-color: #ff6600;
+            color: white;
+        }
+
+        .content {
+            padding: 20px 40px;
+        }
+    </style>
+</head>
+
+<body>
+
+    <div class="navbar">
+        <div class="logo">MyLogo</div>
+        <div class="nav-links">
+            <a href="#home">首页</a>
+            <a href="#about">关于</a>
+            <a href="#services">服务</a>
+            <a href="#contact">联系</a>
+        </div>
+    </div>
+
+    <div class="content">
+        <h1>欢迎来到我的网站！</h1>
+        <p>（以下是模拟大段正文内容，为了让滚动效果更明显）</p>
+        <p>这里是内容……</p>
+        <p>继续滚动可以看到导航栏吸附在顶部！</p>
+        <p>更多内容……</p>
+        <p>再更多内容……</p>
+        <p>无限内容……</p>
+        <p>无限滚动内容……</p>
+        <p>页面很长……</p>
+        <p>再继续滚动……</p>
+        <p>你会发现……</p>
+        <p>导航栏会一直在顶部……</p>
+        <p>直到你滚动到页面底部……</p>
+        <p>导航栏会一直在顶部……</p>
+        <p>这是一个酷炫的导航栏！</p>
+        <p>谢谢</p>
+    </div>
+
+</body>
+
+</html>
