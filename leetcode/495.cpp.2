@@ -1,0 +1,10 @@
+class Solution {
+public:
+    int findPoisonedDuration(vector<int>& timeSeries, int duration) {
+        auto res = 0;
+        for (auto i = 1; i < timeSeries.size(); ++i) {
+            res += min(timeSeries[i] - timeSeries[i - 1], duration);
+        }
+        return res + duration;
+    }
+};

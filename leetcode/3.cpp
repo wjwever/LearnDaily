@@ -27,3 +27,25 @@ public:
         return curMax;
     }
 };
+
+class Solution {
+public:
+    int lengthOfLongestSubstring(string s) {
+        std::map<char, int> cnt;
+        int left = 0;
+        int max_res = 0;
+        for (int i = 0; i < s.size();) {
+            if (cnt.count(s[i])) {
+                --cnt[s[left]];
+                if (cnt[s[left]] == 0) {
+                    cnt.erase(s[left]);
+                }
+                left++;
+            } else {
+                ++cnt[s[i++]];
+                max_res = max(max_res, i - left);
+            }
+        }
+        return max_res;
+    }
+};

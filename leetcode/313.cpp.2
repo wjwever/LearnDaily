@@ -1,0 +1,30 @@
+class Solution {
+public:
+    int nthSuperUglyNumber(int n, vector<int>& primes) {
+        vector<int>  buffer(1, 1);
+        int num  = primes.size();
+
+        vector<int> pointers(num, 0);
+
+
+        while(buffer.size() < n) {
+            long long min_val = INT_MAX;
+            int max_p = 0;
+            int p = 0;
+            for (p; p < pointers.size(); ++p) {
+                if (p < pointers.size() and (long long)buffer[pointers[p]] * primes[p] < min_val) {
+                    max_p = p;
+                    min_val = (long long)buffer[pointers[p]] * primes[p];
+                }
+            }
+    
+            if (buffer.empty() or buffer.back() != min_val) {
+                buffer.push_back(min_val);
+                //std::cout << buffer.back() << std::endl;
+            }
+            pointers[max_p] ++;
+        }
+
+        return buffer.back();
+    }
+};

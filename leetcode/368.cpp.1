@@ -1,0 +1,48 @@
+/*************************************************************************
+    > File Name: leetcode/368.cpp
+    > Author: frank
+    > Mail: 1216451203@qq.com
+    > Created Time: 2025年07月09日 星期三 15时12分18秒
+ ************************************************************************/
+
+#include <bits/stdc++.h>
+using namespace std;
+
+int main()
+{
+    return 0;
+}
+
+class Solution {
+public:
+    vector<int> res;
+    vector<int> largestDivisibleSubset(vector<int>& nums) {
+        sort (nums.begin(), nums.end());
+        vector<int> data;
+        dfs(nums, 0, data);
+        return res;
+    }
+
+    void dfs(vector<int>& nums, int depth, vector<int>& curRes) {
+        if (curRes.size() > res.size()) {
+            res = curRes;
+        }
+        if (depth >= nums.size()) {
+            std::cout << std::endl;
+            return;
+        }
+
+        std::cout << "dfs:" << depth << "\n";
+        for (auto r : curRes) {
+            std::cout << r << " ";
+        }
+        std::cout << std::endl;
+        for (int i = depth; i < nums.size(); ++i) {
+            if (curRes.empty() or nums[i] % curRes.back() == 0) {
+                curRes.push_back(nums[i]);
+                dfs(nums, i + 1, curRes);
+                curRes.pop_back();
+            }
+        }
+    }
+};
